@@ -52,21 +52,12 @@
     }
     .back-btn:hover { background: #f0c800; }
 
-    /* SLIDE PROGRESS NAV */
-    .slide-nav { display: flex; gap: 3px; padding: 8px 22px 0; flex-shrink: 0; }
-    .sn-item { flex: 1; display: flex; align-items: center; gap: 5px; padding: 5px 8px; border-radius: 4px; border-top: 2px solid #e5e7eb; background: #F9FAFB; font-size: 10px; color: #aaa; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .sn-num { font-weight: 800; font-size: 10px; flex-shrink: 0; }
-    .sn-item.sn-done { background: #F0FDF4; color: #15803d; border-top-color: #15803d; }
-    .sn-item.sn-active { background: #FFFDE7; color: #0F1117; border-top-color: #FFD500; font-weight: 700; }
-    .sn-item.sn-active .sn-num { color: #B8860B; }
-    .sn-item.sn-done .sn-num { color: #15803d; }
-
     /* SLIDE HEADER */
     .slide-header {
       display: flex; align-items: center; gap: 10px;
-      padding: 10px 20px 0 20px; margin-bottom: 6px; flex-shrink: 0;
+      padding: 16px 20px 0 20px; margin-bottom: 8px; flex-shrink: 0;
     }
-    .slide-header h2 { font-size: 21px; font-weight: 800; color: #0F1117; }
+    .slide-header h2 { font-size: 22px; font-weight: 800; color: #0F1117; }
 
     /* BRAZIL FLAG */
     .br-flag {
@@ -104,7 +95,7 @@
     .s2-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 11px 18px; border-radius: 0 6px 6px 0; margin: 0 0 10px 0; flex-shrink: 0; }
     .s2-obj-label { font-size: 12px; font-weight: 700; color: #B8860B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
     .s2-obj-text { font-size: 14px; color: #0F1117; line-height: 1.5; font-weight: 500; }
-    .s2-cards-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; flex: 1; min-height: 0; }
+    .s2-cards-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; flex: 1; min-height: 0; }
     .s2-card { background: #fff; border-top: 4px solid #FFD500; border-radius: 6px; padding: 16px 14px 14px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s, box-shadow 0.15s; }
     .s2-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
     .s2-card-num { font-size: 34px; font-weight: 900; color: #FFD500; line-height: 1; }
@@ -146,17 +137,30 @@
     ═══════════════════════════════════════ */
     .s4-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; gap: 12px; }
     .s4-section-label { font-size: 11px; font-weight: 700; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
-    .s4-row { display: grid; gap: 10px; }
-    .s4-row-2 { grid-template-columns: 1fr 1fr; }
-    .s4-row-2s { grid-template-columns: 1fr 1fr; }
-    .s4-card { border-radius: 8px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 5px solid #FFD500; background: #0F1117; }
-    .s4-card-support { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 5px solid #4B5563; }
-    .s4-card-area { font-size: 20px; font-weight: 900; color: #FFD500; line-height: 1.2; }
-    .s4-card-support .s4-card-area { color: #374151; }
-    .s4-card-role { font-size: 12.5px; color: #9CA3AF; line-height: 1.6; margin-top: 2px; }
-    .s4-card-support .s4-card-role { color: #6B7280; }
-    .s4-divider { height: 1px; background: #e5e7eb; }
-    .s4-question { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 13px 18px; border-radius: 0 6px 6px 0; font-size: 15px; font-weight: 700; color: #0F1117; }
+    /* ── SLIDE 4 NOVO — OWNERS COM FOTO ── */
+    .s4n-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; gap: 14px; min-height: 0; }
+    .s4n-section-label { font-size: 11px; font-weight: 700; color: #888; letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; }
+    /* Responsáveis */
+    .s4n-owners { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .s4n-owner-card { background: #0F1117; border-left: 5px solid #FFD500; border-radius: 0 10px 10px 0; padding: 18px 20px; display: flex; gap: 18px; align-items: center; }
+    .s4n-avatar { width: 68px; height: 68px; border-radius: 50%; background: #1e1e1e; border: 2px solid #FFD500; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .s4n-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .s4n-avatar-ph { font-size: 28px; color: #444; }
+    .s4n-owner-info { flex: 1; }
+    .s4n-owner-name { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 2px; }
+    .s4n-owner-area { font-size: 11px; font-weight: 700; color: #FFD500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .s4n-owner-role { font-size: 12px; color: #9CA3AF; line-height: 1.55; }
+    /* Suporte */
+    .s4n-divider { height: 1px; background: #e5e7eb; flex-shrink: 0; }
+    .s4n-supports { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .s4n-support-card { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 4px solid #4B5563; border-radius: 0 8px 8px 0; padding: 14px 18px; display: flex; gap: 14px; align-items: center; }
+    .s4n-savatar { width: 50px; height: 50px; border-radius: 50%; background: #e5e7eb; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .s4n-savatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .s4n-savatar-ph { font-size: 20px; color: #bbb; }
+    .s4n-support-info { flex: 1; }
+    .s4n-support-name { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 1px; }
+    .s4n-support-area { font-size: 10px; font-weight: 700; color: #6B7280; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .s4n-support-role { font-size: 11.5px; color: #6B7280; line-height: 1.45; }
 
     /* ═══════════════════════════════════════
        SLIDE 5 — MACRO ETAPAS
@@ -201,7 +205,7 @@
     .s6-section-title { font-size: 14px; font-weight: 800; color: #0F1117; margin-bottom: 4px; flex-shrink: 0; }
     .s6-questions { display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .s6-q { border: 1px solid #e5e7eb; border-left: 4px solid #0F1117; background: #FAFAFA; border-radius: 0 6px 6px 0; padding: 14px 16px; display: flex; gap: 16px; align-items: center; flex: 1; }
-    .s6-q-num { font-size: 32px; font-weight: 900; color: #FFD500; opacity: 0.7; line-height: 1; flex-shrink: 0; width: 34px; }
+    .s6-q-num { font-size: 18px; font-weight: 900; color: #FFD500; line-height: 1; flex-shrink: 0; width: 20px; }
     .s6-q-text { font-size: 14px; font-weight: 700; color: #0F1117; line-height: 1.45; }
 
     /* ═══════════════════════════════════════
@@ -213,7 +217,7 @@
     .s7-step-1 { border-left-color: #FFD500; }
     .s7-step-2 { border-left-color: #2563EB; }
     .s7-step-3 { border-left-color: #16a34a; }
-    .s7-step-num { font-size: 34px; font-weight: 900; line-height: 1; flex-shrink: 0; width: 38px; padding-top: 2px; }
+    .s7-step-num { font-size: 20px; font-weight: 900; line-height: 1; flex-shrink: 0; width: 24px; padding-top: 2px; }
     .s7-step-1 .s7-step-num { color: #B8860B; }
     .s7-step-2 .s7-step-num { color: #2563EB; }
     .s7-step-3 .s7-step-num { color: #16a34a; }
@@ -226,13 +230,20 @@
     /* ═══════════════════════════════════════
        SLIDE 3 NOVO — OBJETIVO + TIMELINE
     ═══════════════════════════════════════ */
-    .s3n-inner { flex: 1; display: flex; flex-direction: column; padding: 6px 22px 14px; justify-content: space-between; gap: 0; min-height: 0; }
-    .s3n-tl-block { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: flex-end; }
+    .s3n-inner { flex: 1; display: flex; flex-direction: column; padding: 6px 22px 14px; justify-content: flex-start; gap: 0; min-height: 0; }
+    .s3n-tl-block { display: flex; flex-direction: column; gap: 0; margin-top: 10px; }
     .s3n-title { font-size: 26px; font-weight: 900; color: #0F1117; padding: 12px 22px 0; flex-shrink: 0; }
 
-    .s3n-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 13px 16px; border-radius: 0 6px 6px 0; flex-shrink: 0; margin-bottom: 14px; }
-    .s3n-obj-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
-    .s3n-obj-text { font-size: 14px; color: #0F1117; line-height: 1.6; }
+    .s3n-why { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+    .s3n-why-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; }
+    .s3n-why-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .s3n-why-card { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 3px solid #FFD500; border-radius: 0 6px 6px 0; padding: 11px 14px; display: flex; gap: 10px; align-items: flex-start; }
+    .s3n-why-num { font-size: 18px; font-weight: 900; color: #FFD500; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .s3n-why-text { font-size: 12.5px; font-weight: 600; color: #0F1117; line-height: 1.45; }
+
+    .s3n-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 11px 16px; border-radius: 0 6px 6px 0; flex-shrink: 0; margin-top: 22px; }
+    .s3n-obj-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+    .s3n-obj-text { font-size: 13.5px; color: #0F1117; line-height: 1.55; }
 
     .s3n-tl-header { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
     .s3n-tl-header span { color: #0F1117; font-weight: 600; font-size: 13px; letter-spacing: 0; text-transform: none; }
@@ -286,7 +297,7 @@
     .s3n-ans-text { font-size: 12.5px; font-weight: 600; color: #0F1117; line-height: 1.4; }
 
     /* Timeline redesigned — dots + phase segments between them */
-    .s3n-tl-row { display: flex; align-items: center; padding: 28px 0 10px; }
+    .s3n-tl-row { display: flex; align-items: center; padding: 42px 0 10px; }
     .s3n-tl-dot-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; position: relative; }
     .s3n-tl-dot-label { font-size: 12px; font-weight: 700; margin-top: 6px; color: #aaa; }
     .s3n-tl-dot-label-done { color: #15803d; }
@@ -349,38 +360,32 @@
     </div>
 
     <div class="s2-cards-grid">
-      <a class="s2-card" href="#slide2">
-        <div class="s2-card-num">01</div>
-        <div class="s2-card-title">Por qué hacer un BC ahora?</div>
-        <div class="s2-card-desc">El momento estratégico de la competencia y Meli</div>
-        <div class="s2-card-arrow">→</div>
-      </a>
       <a class="s2-card" href="#slide3">
-        <div class="s2-card-num">02</div>
+        <div class="s2-card-num">01</div>
         <div class="s2-card-title">Objetivo BC e Timeline</div>
-        <div class="s2-card-desc">Abril a Agosto</div>
+        <div class="s2-card-desc">Por qué hacer un Business Case ahora, qué queremos responder y para cuándo</div>
         <div class="s2-card-arrow">→</div>
       </a>
       <a class="s2-card" href="#slide4">
-        <div class="s2-card-num">03</div>
+        <div class="s2-card-num">02</div>
         <div class="s2-card-title">Owners y Responsabilidades</div>
         <div class="s2-card-desc">Qué se espera de cada equipo</div>
         <div class="s2-card-arrow">→</div>
       </a>
       <a class="s2-card" href="#slide5">
-        <div class="s2-card-num">04</div>
+        <div class="s2-card-num">03</div>
         <div class="s2-card-title">Etapas Macro</div>
         <div class="s2-card-desc">4 etapas de construcción del BC</div>
         <div class="s2-card-arrow">→</div>
       </a>
       <a class="s2-card" href="#slide6">
-        <div class="s2-card-num">05</div>
+        <div class="s2-card-num">04</div>
         <div class="s2-card-title">Inputs Iniciales</div>
         <div class="s2-card-desc">Qué definiciones necesitamos para empezar</div>
         <div class="s2-card-arrow">→</div>
       </a>
       <a class="s2-card" href="#slide7">
-        <div class="s2-card-num">06</div>
+        <div class="s2-card-num">05</div>
         <div class="s2-card-title">Próximos Pasos</div>
         <div class="s2-card-desc">Cronograma, granularidad y gobernanza</div>
         <div class="s2-card-arrow">→</div>
@@ -403,38 +408,30 @@
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
   <div class="s3n-title">Business Case H&amp;B MLB</div>
-  <div class="slide-nav">
-    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
-    <div class="sn-item sn-active"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
-    <div class="sn-item"><span class="sn-num">03</span> Owners</div>
-    <div class="sn-item"><span class="sn-num">04</span> Etapas Macro</div>
-    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
-    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
-  </div>
 
   <div class="s3n-inner">
 
-    <div class="s3n-obj-box">
-      <div class="s3n-obj-label">Objetivo</div>
-      <div class="s3n-obj-text"><strong>Establecer vías de crecimiento sostenible</strong> a partir de la definición del plan de ambición comercial y de la experiencia que queremos ofrecer, teniendo en cuenta las oportunidades de mercado, la complejidad operativa y la rentabilidad.</div>
-    </div>
-
-    <div class="s3n-answers">
-      <div class="s3n-answers-label">Lo que queremos responder</div>
-      <div class="s3n-answers-row">
-        <div class="s3n-answer">
-          <div class="s3n-ans-num">1</div>
-          <div class="s3n-ans-text">¿Cuál es el potencial real de H&amp;B 2027–2029?</div>
+    <div class="s3n-why">
+      <div class="s3n-why-label">Por qué hacer un BC ahora?</div>
+      <div class="s3n-why-row">
+        <div class="s3n-why-card">
+          <div class="s3n-why-num">●</div>
+          <div class="s3n-why-text"></strong>Competencia más acirrada<strong></strong> — Shopee escalando ME1, Amazon acelerando y Magalu con logística fuerte</div>
         </div>
-        <div class="s3n-answer">
-          <div class="s3n-ans-num">2</div>
-          <div class="s3n-ans-text">¿Qué experiencia queremos entregar al comprador?</div>
+        <div class="s3n-why-card">
+          <div class="s3n-why-num">●</div>
+          <div class="s3n-why-text">Definición y construir la </strong>propuesta de valor Meli </>en H&amp;B — ¿remium, barata o personalizada por categoría?</div>
         </div>
-        <div class="s3n-answer">
-          <div class="s3n-ans-num">3</div>
-          <div class="s3n-ans-text">¿Cómo lo hacemos con rentabilidad y escala?</div>
+        <div class="s3n-why-card">
+          <div class="s3n-why-num">●</div>
+          <div class="s3n-why-text">Visión H&amp;B largo plazo para definir estrategia mientras no tenemos la solución final</div>
         </div>
       </div>
+    </div>
+
+    <div class="s3n-obj-box">
+      <div class="s3n-obj-label">Objetivo del BC</div>
+      <div class="s3n-obj-text"><strong>Establecer vías de crecimiento sostenible</strong> a partir de la definición del plan de ambición comercial y de la experiencia que queremos ofrecer, teniendo en cuenta las oportunidades de mercado, la complejidad operativa y la rentabilidad.</div>
     </div>
 
     <div class="s3n-tl-block">
@@ -509,46 +506,56 @@
 <div class="slide slide-light" id="slide4">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
-  <div class="slide-nav">
-    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
-    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
-    <div class="sn-item sn-active"><span class="sn-num">03</span> Owners</div>
-    <div class="sn-item"><span class="sn-num">04</span> Etapas Macro</div>
-    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
-    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
-  </div>
   <div class="slide-header"><h2>Owners y Responsabilidades</h2></div>
 
-  <div class="s4-inner">
+  <div class="s4n-inner">
 
-    <div class="s4-section-label">Owners — Áreas Responsables</div>
-    <div class="s4-row s4-row-2">
-      <div class="s4-card">
-        <div class="s4-card-area">Shipping</div>
-        <div class="s4-card-role">Estrategia logística y picking type.<br>Capacidades operacionales y eficiencia de entrega.</div>
+    <div class="s4n-section-label">Responsáveis</div>
+    <div class="s4n-owners">
+
+      <div class="s4n-owner-card">
+        <div class="s4n-avatar"><span class="s4n-avatar-ph">👤</span></div>
+        <div class="s4n-owner-info">
+          <div class="s4n-owner-name">Nome</div>
+          <div class="s4n-owner-area">Shipping</div>
+          <div class="s4n-owner-role">Estrategia logística y picking type. Capacidades operacionales y eficiencia de entrega.</div>
+        </div>
       </div>
-      <div class="s4-card">
-        <div class="s4-card-area">Comercial</div>
-        <div class="s4-card-role">Ambición de NMV y Market Share por categoría.<br>Estrategia de sellers, dominios D1 y hunting.</div>
+
+      <div class="s4n-owner-card">
+        <div class="s4n-avatar"><span class="s4n-avatar-ph">👤</span></div>
+        <div class="s4n-owner-info">
+          <div class="s4n-owner-name">Nome</div>
+          <div class="s4n-owner-area">Comercial</div>
+          <div class="s4n-owner-role">Ambición de NMV y Market Share por categoría. Estrategia de sellers, dominios D1 y hunting.</div>
+        </div>
       </div>
+
     </div>
 
-    <div class="s4-divider"></div>
+    <div class="s4n-divider"></div>
 
-    <div class="s4-section-label">Soporte</div>
-    <div class="s4-row s4-row-2s">
-      <div class="s4-card s4-card-support">
-        <div class="s4-card-area">Finanzas</div>
-        <div class="s4-card-role">Simulación de P&amp;L y apetito financiero por escenario.</div>
-      </div>
-      <div class="s4-card s4-card-support">
-        <div class="s4-card-area">Staff Capabilities</div>
-        <div class="s4-card-role">Planning y Pricing — capacidades e inversiones necesarias.</div>
-      </div>
-    </div>
+    <div class="s4n-section-label">Suporte</div>
+    <div class="s4n-supports">
 
-    <div class="s4-question">
-      ¿Estamos con las personas correctas en la sala para construir este Business Case?
+      <div class="s4n-support-card">
+        <div class="s4n-savatar"><span class="s4n-savatar-ph">👤</span></div>
+        <div class="s4n-support-info">
+          <div class="s4n-support-name">Nome</div>
+          <div class="s4n-support-area">Finanzas</div>
+          <div class="s4n-support-role">Simulación de P&amp;L y apetito financiero por escenario.</div>
+        </div>
+      </div>
+
+      <div class="s4n-support-card">
+        <div class="s4n-savatar"><span class="s4n-savatar-ph">👤</span></div>
+        <div class="s4n-support-info">
+          <div class="s4n-support-name">Nome</div>
+          <div class="s4n-support-area">Staff Capabilities</div>
+          <div class="s4n-support-role">Planning y Pricing — capacidades e inversiones necesarias.</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -567,14 +574,6 @@
 <div class="slide slide-light" id="slide5">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
-  <div class="slide-nav">
-    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
-    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
-    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
-    <div class="sn-item sn-active"><span class="sn-num">04</span> Etapas Macro</div>
-    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
-    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
-  </div>
   <div class="slide-header"><h2>Etapas Macro — Así vamos a construir el BC</h2></div>
 
   <div class="s5-inner">
@@ -582,7 +581,7 @@
 
       <div class="s5-card s5-card-1">
         <div class="s5-card-num">1</div>
-        <div class="s5-card-title">Ambición y Objetivos</div>
+        <div class="s5-card-title">Ambición y Propuesta de valor</div>
         <ul class="s5-card-bullets">
           <li>Definir ambición de crecimiento (Meli y Mercado) y escenarios <span class="s5-area-tag">Comercial</span></li>
           <li>Definir el diferencial competitivo de Meli en H&amp;B <span class="s5-area-tag">Shipping</span></li>
@@ -639,15 +638,7 @@
 <div class="slide slide-light" id="slide6">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
-  <div class="slide-nav">
-    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
-    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
-    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
-    <div class="sn-item sn-done"><span class="sn-num">04</span> Etapas Macro</div>
-    <div class="sn-item sn-active"><span class="sn-num">05</span> Inputs Iniciales</div>
-    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
-  </div>
-  <div class="slide-header"><h2>Inputs Iniciales — ¿Qué necesitamos definir para empezar?</h2></div>
+  <div class="slide-header"><h2>Inputs Iniciales — Qué necesitamos definir para empezar?</h2></div>
 
   <div class="s6-inner">
 
@@ -655,7 +646,7 @@
       <div class="s6-ctx-label">Bloque 1 · Etapas Macro</div>
       <div class="s6-block">
         <div class="s6-block-num">1</div>
-        <div class="s6-block-title">Ambición y Objetivos</div>
+        <div class="s6-block-title">Ambición y Propuesta de valor</div>
         <ul class="s6-block-bullets">
           <li>Definir ambición de crecimiento y escenarios</li>
           <li>Definir el diferencial competitivo de Meli en H&amp;B</li>
@@ -668,20 +659,20 @@
       <div class="s6-section-title">Sin estas definiciones, el BC no tiene norte estratégico</div>
       <div class="s6-questions">
         <div class="s6-q">
-          <div class="s6-q-num">1</div>
-          <div class="s6-q-text">¿Cuál es la ambición de NMV y Market Share para los próximos 3 años?</div>
+          <div class="s6-q-num">●</div>
+          <div class="s6-q-text">Cuál es la ambición de NMV y Market Share para los próximos 3 años?</div>
         </div>
         <div class="s6-q">
-          <div class="s6-q-num">2</div>
-          <div class="s6-q-text">¿Cómo queremos ser reconocidos en el mercado y cuál es nuestro diferencial competitivo en H&amp;B?</div>
+          <div class="s6-q-num">●</div>
+          <div class="s6-q-text">Cómo queremos ser reconocidos en el mercado y cuál es nuestro diferencial competitivo en H&amp;B?</div>
         </div>
         <div class="s6-q">
-          <div class="s6-q-num">3</div>
-          <div class="s6-q-text">¿Cuál es el apetito financiero: crecimiento con inversión o rentabilidad sustentable desde el inicio?</div>
+          <div class="s6-q-num">●</div>
+          <div class="s6-q-text">Cuál es el apetito financiero: crecimiento con inversión o rentabilidad sustentable desde el inicio?</div>
         </div>
         <div class="s6-q">
-          <div class="s6-q-num">4</div>
-          <div class="s6-q-text">¿Qué capabilities son críticas para alcanzar la ambición y cuándo las necesitamos?</div>
+          <div class="s6-q-num">●</div>
+          <div class="s6-q-text">Qué capabilities son críticas para alcanzar la ambición y cuándo las necesitamos?</div>
         </div>
       </div>
     </div>
@@ -702,21 +693,13 @@
 <div class="slide slide-light" id="slide7">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
-  <div class="slide-nav">
-    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
-    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
-    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
-    <div class="sn-item sn-done"><span class="sn-num">04</span> Etapas Macro</div>
-    <div class="sn-item sn-done"><span class="sn-num">05</span> Inputs Iniciales</div>
-    <div class="sn-item sn-active"><span class="sn-num">06</span> Próx. Pasos</div>
-  </div>
   <div class="slide-header"><h2>Próximos Pasos</h2></div>
 
   <div class="s7-inner">
     <div class="s7-steps">
 
       <div class="s7-step s7-step-1">
-        <div class="s7-step-num">01</div>
+        <div class="s7-step-num">●</div>
         <div class="s7-step-body">
           <div class="s7-step-title">Construir el cronograma detallado con los owners</div>
           <div class="s7-step-desc">Establecer fechas, responsables y sesiones de trabajo por bloque del BC. <strong>Deadline para confirmar disponibilidad: 04/abr.</strong> Coordinación a cargo de H&amp;B PMO.</div>
@@ -724,7 +707,7 @@
       </div>
 
       <div class="s7-step s7-step-2">
-        <div class="s7-step-num">02</div>
+        <div class="s7-step-num">●</div>
         <div class="s7-step-body">
           <div class="s7-step-title">Definir la granularidad de información esperada</div>
           <div class="s7-step-desc">Alinear el nivel de detalle de cada entregable: <strong>por vertical y dominio D1</strong> — para que todos los owners trabajen con la misma precisión desde el inicio.</div>
@@ -732,17 +715,13 @@
       </div>
 
       <div class="s7-step s7-step-3">
-        <div class="s7-step-num">03</div>
+        <div class="s7-step-num">●</div>
         <div class="s7-step-body">
           <div class="s7-step-title">Gobernanza para tracking de la iniciativa</div>
           <div class="s7-step-desc"><strong>Mesas de trabajo con owners</strong> para seguimiento semanal + <strong>Monthly Iniciativas Estratégicas</strong> para visibilidad de liderazgo: dónde estamos, riesgos y pedidos de ayuda.</div>
         </div>
       </div>
 
-    </div>
-
-    <div class="s7-deadline">
-      <strong>Acción inmediata:</strong> compartir disponibilidad con todos los owners hasta el <strong>04/abr</strong>.
     </div>
   </div>
 
