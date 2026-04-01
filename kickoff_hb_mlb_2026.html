@@ -52,12 +52,21 @@
     }
     .back-btn:hover { background: #f0c800; }
 
+    /* SLIDE PROGRESS NAV */
+    .slide-nav { display: flex; gap: 3px; padding: 8px 22px 0; flex-shrink: 0; }
+    .sn-item { flex: 1; display: flex; align-items: center; gap: 5px; padding: 5px 8px; border-radius: 4px; border-top: 2px solid #e5e7eb; background: #F9FAFB; font-size: 10px; color: #aaa; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sn-num { font-weight: 800; font-size: 10px; flex-shrink: 0; }
+    .sn-item.sn-done { background: #F0FDF4; color: #15803d; border-top-color: #15803d; }
+    .sn-item.sn-active { background: #FFFDE7; color: #0F1117; border-top-color: #FFD500; font-weight: 700; }
+    .sn-item.sn-active .sn-num { color: #B8860B; }
+    .sn-item.sn-done .sn-num { color: #15803d; }
+
     /* SLIDE HEADER */
     .slide-header {
       display: flex; align-items: center; gap: 10px;
-      padding: 16px 20px 0 20px; margin-bottom: 8px; flex-shrink: 0;
+      padding: 10px 20px 0 20px; margin-bottom: 6px; flex-shrink: 0;
     }
-    .slide-header h2 { font-size: 22px; font-weight: 800; color: #0F1117; }
+    .slide-header h2 { font-size: 21px; font-weight: 800; color: #0F1117; }
 
     /* BRAZIL FLAG */
     .br-flag {
@@ -291,9 +300,9 @@
     .s3n-seg-done .s3n-tl-seg-name { color: #15803d; }
     .s3n-seg-active .s3n-tl-seg-name { color: #B8860B; }
     .s3n-seg-pending .s3n-tl-seg-name { color: #6B7280; }
-    .s3n-kickoff-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 10px; font-weight: 800; padding: 0; white-space: nowrap; }
+    .s3n-kickoff-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 13px; font-weight: 800; padding: 0; white-space: nowrap; }
     .s3n-tl-seg-wide { flex: 2; }
-    .s3n-op-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 10px; font-weight: 800; padding: 0; white-space: nowrap; }
+    .s3n-op-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 13px; font-weight: 800; padding: 0; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -394,6 +403,14 @@
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
   <div class="s3n-title">Business Case H&amp;B MLB</div>
+  <div class="slide-nav">
+    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
+    <div class="sn-item sn-active"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
+    <div class="sn-item"><span class="sn-num">03</span> Owners</div>
+    <div class="sn-item"><span class="sn-num">04</span> Etapas Macro</div>
+    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
+    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
+  </div>
 
   <div class="s3n-inner">
 
@@ -421,7 +438,7 @@
     </div>
 
     <div class="s3n-tl-block">
-    <div class="s3n-tl-header">Timeline <span>· Entrega final: Agosto 2026 → insumos para el OP 2027</span></div>
+    <div class="s3n-tl-header">Timeline <span>· Entrega final: Jul/26 → insumos para el OP 2027</span></div>
 
     <div class="s3n-tl-row">
 
@@ -492,6 +509,14 @@
 <div class="slide slide-light" id="slide4">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-nav">
+    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
+    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
+    <div class="sn-item sn-active"><span class="sn-num">03</span> Owners</div>
+    <div class="sn-item"><span class="sn-num">04</span> Etapas Macro</div>
+    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
+    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
+  </div>
   <div class="slide-header"><h2>Owners y Responsabilidades</h2></div>
 
   <div class="s4-inner">
@@ -542,6 +567,14 @@
 <div class="slide slide-light" id="slide5">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-nav">
+    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
+    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
+    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
+    <div class="sn-item sn-active"><span class="sn-num">04</span> Etapas Macro</div>
+    <div class="sn-item"><span class="sn-num">05</span> Inputs Iniciales</div>
+    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
+  </div>
   <div class="slide-header"><h2>Etapas Macro — Así vamos a construir el BC</h2></div>
 
   <div class="s5-inner">
@@ -606,6 +639,14 @@
 <div class="slide slide-light" id="slide6">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-nav">
+    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
+    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
+    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
+    <div class="sn-item sn-done"><span class="sn-num">04</span> Etapas Macro</div>
+    <div class="sn-item sn-active"><span class="sn-num">05</span> Inputs Iniciales</div>
+    <div class="sn-item"><span class="sn-num">06</span> Próx. Pasos</div>
+  </div>
   <div class="slide-header"><h2>Inputs Iniciales — ¿Qué necesitamos definir para empezar?</h2></div>
 
   <div class="s6-inner">
@@ -661,6 +702,14 @@
 <div class="slide slide-light" id="slide7">
   <div class="br-flag"></div>
   <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-nav">
+    <div class="sn-item sn-done"><span class="sn-num">01</span> Por qué?</div>
+    <div class="sn-item sn-done"><span class="sn-num">02</span> Objetivo &amp; Timeline</div>
+    <div class="sn-item sn-done"><span class="sn-num">03</span> Owners</div>
+    <div class="sn-item sn-done"><span class="sn-num">04</span> Etapas Macro</div>
+    <div class="sn-item sn-done"><span class="sn-num">05</span> Inputs Iniciales</div>
+    <div class="sn-item sn-active"><span class="sn-num">06</span> Próx. Pasos</div>
+  </div>
   <div class="slide-header"><h2>Próximos Pasos</h2></div>
 
   <div class="s7-inner">
