@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kick Off BC H&B MLB 3YP — Liderazgo Senior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #111;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 32px 24px; gap: 32px; min-height: 100vh;
+    }
+
+    .slide-label {
+      color: #555; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      align-self: center; margin-bottom: -20px;
+    }
+
+    /* ── SLIDE BASE ── */
+    .slide {
+      display: flex; flex-direction: column;
+      width: 960px; height: 540px;
+      position: relative; flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .slide-light { background: #FFFFFF; border-left: 6px solid #FFD500; }
+    .slide-light .slide-footer {
+      width: 100%; height: 36px;
+      background: #0F1117;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px; font-size: 11px; letter-spacing: 0.04em;
+      margin-top: auto; flex-shrink: 0;
+    }
+    .slide-light .slide-footer span { color: #FFD500; }
+
+    /* BACK BTN */
+    .back-btn {
+      position: absolute; top: 12px; right: 60px;
+      background: #FFD500; color: #0F1117;
+      font-size: 12px; font-weight: 700; padding: 6px 14px;
+      border-radius: 4px; text-decoration: none;
+      letter-spacing: 0.04em; z-index: 10; transition: background 0.2s;
+    }
+    .back-btn:hover { background: #f0c800; }
+
+    /* SLIDE HEADER */
+    .slide-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 20px 0 20px; margin-bottom: 8px; flex-shrink: 0;
+    }
+    .slide-header h2 { font-size: 22px; font-weight: 800; color: #0F1117; }
+
+    /* BRAZIL FLAG */
+    .br-flag {
+      position: absolute; top: 12px; right: 14px;
+      width: 38px; height: 38px; border-radius: 50%;
+      overflow: hidden; z-index: 20; flex-shrink: 0;
+      background-image: url('../../Rascunho de imagens/imagem brasil.png');
+      background-size: cover; background-position: center;
+    }
+
+    /* ═══════════════════════════════════════
+       SLIDE 1 — COVER
+    ═══════════════════════════════════════ */
+    #slide1 { background: #0F1117; min-height: 540px; }
+    .s1-topbar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg,#FFD500,#ff9900 50%,#FFD500); }
+    .s1-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,213,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,213,0,0.04) 1px,transparent 1px); background-size: 40px 40px; }
+    .s1-radial1 { position: absolute; top: -130px; right: -90px; width: 500px; height: 500px; background: radial-gradient(circle,rgba(255,213,0,0.12) 0%,transparent 65%); border-radius: 50%; }
+    .s1-radial2 { position: absolute; bottom: -90px; left: -70px; width: 340px; height: 340px; background: radial-gradient(circle,rgba(255,213,0,0.05) 0%,transparent 65%); border-radius: 50%; }
+    .s1-ring1 { position: absolute; top: -70px; right: -70px; width: 380px; height: 380px; border: 1.5px solid rgba(255,213,0,0.12); border-radius: 50%; }
+    .s1-ring2 { position: absolute; top: -35px; right: -35px; width: 260px; height: 260px; border: 1px solid rgba(255,213,0,0.08); border-radius: 50%; }
+    .s1-ring3 { position: absolute; top: 10px; right: 10px; width: 140px; height: 140px; border: 1px solid rgba(255,213,0,0.06); border-radius: 50%; }
+    .s1-body { position: absolute; top: 3px; bottom: 0; left: 0; right: 0; display: flex; align-items: center; }
+    .s1-left { padding: 40px 60px 40px 56px; display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 2; max-width: 700px; }
+    .s1-kick-tag { display: inline-block; font-size: 12px; font-weight: 700; color: #FFD500; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(255,213,0,0.35); padding: 5px 14px; border-radius: 20px; width: fit-content; }
+    .s1-title { font-size: 58px; font-weight: 900; line-height: 1.0; color: #fff; }
+    .s1-title span { color: #FFD500; }
+    .s1-subtitle { font-size: 18px; font-weight: 300; color: #999; margin-top: -4px; }
+    .s1-divider { width: 52px; height: 3px; background: #FFD500; border-radius: 2px; }
+    .s1-meta { font-size: 13px; color: #666; letter-spacing: 0.04em; margin-top: 4px; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 2 — AGENDA
+    ═══════════════════════════════════════ */
+    .s2-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 10px; min-height: 0; }
+    .s2-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 11px 18px; border-radius: 0 6px 6px 0; margin: 0 0 10px 0; flex-shrink: 0; }
+    .s2-obj-label { font-size: 12px; font-weight: 700; color: #B8860B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+    .s2-obj-text { font-size: 14px; color: #0F1117; line-height: 1.5; font-weight: 500; }
+    .s2-cards-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; flex: 1; min-height: 0; }
+    .s2-card { background: #fff; border-top: 4px solid #FFD500; border-radius: 6px; padding: 16px 14px 14px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s, box-shadow 0.15s; }
+    .s2-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+    .s2-card-num { font-size: 34px; font-weight: 900; color: #FFD500; line-height: 1; }
+    .s2-card-title { font-size: 14px; font-weight: 700; color: #0F1117; line-height: 1.3; }
+    .s2-card-desc { font-size: 11.5px; color: #666; line-height: 1.55; flex: 1; }
+    .s2-card-arrow { font-size: 14px; color: #FFD500; font-weight: 700; margin-top: auto; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 3 — TIMELINE
+    ═══════════════════════════════════════ */
+    .s3-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; gap: 0; }
+    .s3-meta-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 10px 16px; border-radius: 0 6px 6px 0; margin-bottom: 14px; font-size: 14px; font-weight: 500; color: #0F1117; line-height: 1.5; }
+    .s3-meta-box strong { font-weight: 800; color: #B8860B; }
+
+    /* Phases row */
+    .s3-phases { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; flex: 1; }
+    .s3-phase-card { border-radius: 8px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px; }
+    .s3-f1 { background: #FFFDE7; border: 1.5px solid #FFD500; }
+    .s3-f2 { background: #EEF2F7; border: 1.5px solid #2563EB; }
+    .s3-f3 { background: #F3EEF7; border: 1.5px solid #7c3aed; }
+    .s3-f4 { background: #EEF7F0; border: 1.5px solid #16a34a; }
+    .s3-pc-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+    .s3-f1 .s3-pc-badge { color: #B8860B; }
+    .s3-f2 .s3-pc-badge { color: #1d4ed8; }
+    .s3-f3 .s3-pc-badge { color: #6d28d9; }
+    .s3-f4 .s3-pc-badge { color: #15803d; }
+    .s3-pc-status { font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
+    .s3-pc-status.active { background: #FFD500; color: #0F1117; }
+    .s3-pc-title { font-size: 16px; font-weight: 800; color: #0F1117; line-height: 1.3; }
+    .s3-pc-desc { font-size: 12.5px; color: #555; line-height: 1.5; flex: 1; }
+    .s3-pc-months { font-size: 11px; font-weight: 700; margin-top: 8px; }
+    .s3-f1 .s3-pc-months { color: #B8860B; }
+    .s3-f2 .s3-pc-months { color: #1d4ed8; }
+    .s3-f3 .s3-pc-months { color: #6d28d9; }
+    .s3-f4 .s3-pc-months { color: #15803d; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 4 — OWNERS
+    ═══════════════════════════════════════ */
+    .s4-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; gap: 12px; }
+    .s4-section-label { font-size: 11px; font-weight: 700; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+    .s4-row { display: grid; gap: 10px; }
+    .s4-row-2 { grid-template-columns: 1fr 1fr; }
+    .s4-row-2s { grid-template-columns: 1fr 1fr; }
+    .s4-card { border-radius: 8px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 5px solid #FFD500; background: #0F1117; }
+    .s4-card-support { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 5px solid #4B5563; }
+    .s4-card-area { font-size: 20px; font-weight: 900; color: #FFD500; line-height: 1.2; }
+    .s4-card-support .s4-card-area { color: #374151; }
+    .s4-card-role { font-size: 12.5px; color: #9CA3AF; line-height: 1.6; margin-top: 2px; }
+    .s4-card-support .s4-card-role { color: #6B7280; }
+    .s4-divider { height: 1px; background: #e5e7eb; }
+    .s4-question { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 13px 18px; border-radius: 0 6px 6px 0; font-size: 15px; font-weight: 700; color: #0F1117; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 5 — MACRO ETAPAS
+    ═══════════════════════════════════════ */
+    .s5-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; }
+    .s5-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; flex: 1; }
+    .s5-card { border-radius: 8px; padding: 15px 14px; display: flex; flex-direction: column; gap: 8px; border-left: 4px solid; }
+    .s5-card-1 { background: #FFFDE7; border-color: #FFD500; }
+    .s5-card-2 { background: #EEF2F7; border-color: #2563EB; }
+    .s5-card-3 { background: #F3EEF7; border-color: #7c3aed; }
+    .s5-card-4 { background: #EEF7F0; border-color: #16a34a; }
+    .s5-card-num { font-size: 38px; font-weight: 900; line-height: 1; }
+    .s5-card-1 .s5-card-num { color: #FFD500; opacity: 0.5; }
+    .s5-card-2 .s5-card-num { color: #2563EB; opacity: 0.3; }
+    .s5-card-3 .s5-card-num { color: #7c3aed; opacity: 0.3; }
+    .s5-card-4 .s5-card-num { color: #16a34a; opacity: 0.3; }
+    .s5-card-title { font-size: 15px; font-weight: 800; color: #0F1117; line-height: 1.3; }
+    .s5-card-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .s5-card-bullets li { font-size: 12px; color: #444; line-height: 1.4; padding-left: 12px; position: relative; }
+    .s5-card-bullets li::before { content: '•'; position: absolute; left: 0; font-weight: 900; }
+    .s5-card-1 .s5-card-bullets li::before { color: #B8860B; }
+    .s5-card-2 .s5-card-bullets li::before { color: #2563EB; }
+    .s5-card-3 .s5-card-bullets li::before { color: #7c3aed; }
+    .s5-card-4 .s5-card-bullets li::before { color: #16a34a; }
+    .s5-area-tag { display: inline-block; font-size: 9px; font-weight: 700; color: #888; background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 3px; margin-left: 4px; vertical-align: middle; white-space: nowrap; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 6 — INPUTS INICIALES (split)
+    ═══════════════════════════════════════ */
+    .s6-inner { flex: 1; display: flex; gap: 16px; padding: 0 22px 12px; }
+    .s6-left { width: 36%; display: flex; flex-direction: column; }
+    .s6-right { flex: 1; display: flex; flex-direction: column; gap: 0; }
+
+    .s6-ctx-label { font-size: 11px; font-weight: 700; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; flex-shrink: 0; }
+    .s6-block { flex: 1; border-left: 4px solid #FFD500; background: #FFFDE7; border-radius: 0 8px 8px 0; padding: 15px 14px; display: flex; flex-direction: column; gap: 8px; }
+    .s6-block-num { font-size: 38px; font-weight: 900; color: #FFD500; opacity: 0.5; line-height: 1; }
+    .s6-block-title { font-size: 15px; font-weight: 800; color: #0F1117; }
+    .s6-block-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .s6-block-bullets li { font-size: 12px; color: #444; line-height: 1.4; padding-left: 12px; position: relative; }
+    .s6-block-bullets li::before { content: '•'; position: absolute; left: 0; color: #B8860B; font-weight: 900; }
+
+    .s6-section-title { font-size: 14px; font-weight: 800; color: #0F1117; margin-bottom: 4px; flex-shrink: 0; }
+    .s6-questions { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .s6-q { border: 1px solid #e5e7eb; border-left: 4px solid #0F1117; background: #FAFAFA; border-radius: 0 6px 6px 0; padding: 14px 16px; display: flex; gap: 16px; align-items: center; flex: 1; }
+    .s6-q-num { font-size: 32px; font-weight: 900; color: #FFD500; opacity: 0.7; line-height: 1; flex-shrink: 0; width: 34px; }
+    .s6-q-text { font-size: 14px; font-weight: 700; color: #0F1117; line-height: 1.45; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 7 — PRÓXIMOS PASOS
+    ═══════════════════════════════════════ */
+    .s7-inner { flex: 1; display: flex; flex-direction: column; padding: 0 22px 12px; gap: 10px; }
+    .s7-steps { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .s7-step { display: flex; gap: 18px; align-items: flex-start; background: #FAFAFA; border: 1px solid #e5e7eb; border-left: 5px solid; border-radius: 0 8px 8px 0; padding: 16px 18px; flex: 1; }
+    .s7-step-1 { border-left-color: #FFD500; }
+    .s7-step-2 { border-left-color: #2563EB; }
+    .s7-step-3 { border-left-color: #16a34a; }
+    .s7-step-num { font-size: 34px; font-weight: 900; line-height: 1; flex-shrink: 0; width: 38px; padding-top: 2px; }
+    .s7-step-1 .s7-step-num { color: #B8860B; }
+    .s7-step-2 .s7-step-num { color: #2563EB; }
+    .s7-step-3 .s7-step-num { color: #16a34a; }
+    .s7-step-body { flex: 1; }
+    .s7-step-title { font-size: 15px; font-weight: 800; color: #0F1117; line-height: 1.3; margin-bottom: 7px; }
+    .s7-step-desc { font-size: 13px; color: #555; line-height: 1.65; }
+    .s7-step-desc strong { color: #0F1117; font-weight: 700; }
+    .s7-deadline { background: #FFF3CD; border: 1.5px solid #FFD500; border-radius: 6px; padding: 9px 14px; font-size: 12.5px; color: #0F1117; line-height: 1.5; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════
+       SLIDE 3 NOVO — OBJETIVO + TIMELINE
+    ═══════════════════════════════════════ */
+    .s3n-inner { flex: 1; display: flex; flex-direction: column; padding: 6px 22px 14px; justify-content: space-between; gap: 0; min-height: 0; }
+    .s3n-tl-block { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: flex-end; }
+    .s3n-title { font-size: 26px; font-weight: 900; color: #0F1117; padding: 12px 22px 0; flex-shrink: 0; }
+
+    .s3n-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 13px 16px; border-radius: 0 6px 6px 0; flex-shrink: 0; margin-bottom: 14px; }
+    .s3n-obj-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .s3n-obj-text { font-size: 14px; color: #0F1117; line-height: 1.6; }
+
+    .s3n-tl-header { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
+    .s3n-tl-header span { color: #0F1117; font-weight: 600; font-size: 13px; letter-spacing: 0; text-transform: none; }
+
+    /* Month dots row */
+    .s3n-months-wrap { position: relative; padding: 24px 20px 6px; flex-shrink: 0; }
+    .s3n-kickoff-pin { position: absolute; top: 0; left: 26%; transform: translateX(-50%); background: #0F1117; color: #FFD500; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 4px; border: 1px solid rgba(255,213,0,0.5); white-space: nowrap; }
+    .s3n-months { display: flex; justify-content: space-between; align-items: flex-start; position: relative; }
+    .s3n-months::before { content: ''; position: absolute; top: 10px; left: 20px; right: 20px; height: 2px; background: #e0e0e0; }
+    .s3n-month { display: flex; flex-direction: column; align-items: center; gap: 5px; position: relative; z-index: 1; }
+    .s3n-dot { width: 22px; height: 22px; border-radius: 50%; background: #ddd; border: 3px solid #fff; box-shadow: 0 0 0 2px #ddd; display: flex; align-items: center; justify-content: center; }
+    .s3n-dot-done { background: #15803d; box-shadow: 0 0 0 2px #15803d; }
+    .s3n-dot-done::after { content: '✓'; font-size: 10px; color: #fff; font-weight: 900; }
+    .s3n-dot-active { background: #FFD500; box-shadow: 0 0 0 3px rgba(255,213,0,0.3); }
+    .s3n-month-label { font-size: 12px; font-weight: 600; color: #aaa; }
+    .s3n-month-label-done { color: #15803d; font-weight: 700; }
+    .s3n-month-label-active { color: #B8860B; font-weight: 700; }
+    .s3n-month-sub { font-size: 10px; color: #aaa; }
+    .s3n-month-sub-active { color: #B8860B; font-weight: 600; }
+
+    /* Phase cards */
+    .s3n-phases { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; flex: 1; }
+    .s3n-phase { border-radius: 10px; padding: 14px 14px; display: flex; flex-direction: column; gap: 6px; border: 2px solid; }
+    .s3n-f1 { background: #f0fdf4; border-color: #15803d; }
+    .s3n-f2 { background: #FFFDE7; border-color: #FFD500; }
+    .s3n-f3 { background: #F9FAFB; border-color: #9CA3AF; }
+    .s3n-f4 { background: #F9FAFB; border-color: #9CA3AF; }
+    .s3n-phase-top { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+    .s3n-fase-label { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    .s3n-f1 .s3n-fase-label { color: #15803d; }
+    .s3n-f2 .s3n-fase-label { color: #B8860B; }
+    .s3n-f3 .s3n-fase-label { color: #6B7280; }
+    .s3n-f4 .s3n-fase-label { color: #6B7280; }
+    .s3n-status { font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; }
+    .s3n-status-done { background: #15803d; color: #fff; }
+    .s3n-status-active { background: #FFD500; color: #0F1117; }
+    .s3n-phase-title { font-size: 14px; font-weight: 800; color: #0F1117; line-height: 1.3; }
+    .s3n-phase-desc { font-size: 11.5px; color: #555; line-height: 1.5; flex: 1; }
+    .s3n-phase-month { font-size: 11px; font-weight: 700; margin-top: 6px; }
+    .s3n-f1 .s3n-phase-month { color: #15803d; }
+    .s3n-f2 .s3n-phase-month { color: #B8860B; }
+    .s3n-f3 .s3n-phase-month { color: #6B7280; }
+    .s3n-f4 .s3n-phase-month { color: #6B7280; }
+
+    /* Respostas */
+    .s3n-answers { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; margin-bottom: 14px; }
+    .s3n-answers-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .s3n-answers-row { display: flex; gap: 8px; }
+    .s3n-answer { flex: 1; display: flex; gap: 10px; align-items: center; background: #FAFAFA; border: 1px solid #e5e7eb; border-left: 3px solid #0F1117; border-radius: 0 6px 6px 0; padding: 9px 12px; }
+    .s3n-ans-num { font-size: 22px; font-weight: 900; color: #FFD500; opacity: 0.7; flex-shrink: 0; line-height: 1; }
+    .s3n-ans-text { font-size: 12.5px; font-weight: 600; color: #0F1117; line-height: 1.4; }
+
+    /* Timeline redesigned — dots + phase segments between them */
+    .s3n-tl-row { display: flex; align-items: center; padding: 28px 0 10px; }
+    .s3n-tl-dot-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; position: relative; }
+    .s3n-tl-dot-label { font-size: 12px; font-weight: 700; margin-top: 6px; color: #aaa; }
+    .s3n-tl-dot-label-done { color: #15803d; }
+    .s3n-tl-dot-label-active { color: #B8860B; }
+    .s3n-tl-seg { flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .s3n-tl-seg-line { width: 100%; height: 2px; }
+    .s3n-seg-done .s3n-tl-seg-line { background: #15803d; }
+    .s3n-seg-active .s3n-tl-seg-line { background: #FFD500; }
+    .s3n-seg-pending .s3n-tl-seg-line { background: #e0e0e0; }
+    .s3n-tl-seg-name { font-size: 10px; font-weight: 700; text-align: center; margin-top: 7px; line-height: 1.35; }
+    .s3n-seg-done .s3n-tl-seg-name { color: #15803d; }
+    .s3n-seg-active .s3n-tl-seg-name { color: #B8860B; }
+    .s3n-seg-pending .s3n-tl-seg-name { color: #6B7280; }
+    .s3n-kickoff-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 10px; font-weight: 800; padding: 0; white-space: nowrap; }
+    .s3n-tl-seg-wide { flex: 2; }
+    .s3n-op-above { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: transparent; color: #0F1117; font-size: 10px; font-weight: 800; padding: 0; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     SLIDE 1 — COVER
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 01 — Portada</p>
+<div class="slide" id="slide1">
+  <div class="s1-topbar"></div>
+  <div class="s1-grid"></div>
+  <div class="s1-radial1"></div>
+  <div class="s1-radial2"></div>
+  <div class="s1-ring1"></div>
+  <div class="s1-ring2"></div>
+  <div class="s1-ring3"></div>
+  <div class="br-flag"></div>
+  <div class="s1-body">
+    <div class="s1-left">
+      <div class="s1-kick-tag">KICK OFF · BUSINES CASE · MLB</div>
+      <div class="s1-title">Business Case<br><span>Heavy &amp; Bulky MLB</span></div>
+      <div class="s1-subtitle">Qué H&amp;B queremos construir en los próximos 3 años?</div>
+      <div class="s1-divider"></div>
+      <div class="s1-meta">01 abril 2026 &nbsp;·&nbsp; Confidencial</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 2 — AGENDA Y OBJETIVO
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 02</p>
+<div class="slide slide-light" id="slide2">
+  <div class="br-flag"></div>
+  <div class="slide-header"><h2>Agenda</h2></div>
+
+  <div class="s2-inner">
+    <div class="s2-obj-box">
+      <div class="s2-obj-label">Objetivo de esta reunión</div>
+      <div class="s2-obj-text">Definir las <strong>etapas de construcción</strong> del BC, asegurar que estamos con las <strong>personas correctas</strong> y,
+  sobre todo, definir lo que vamos responder al final del ejercicio para llegar al <strong>OP 2027</strong> con todas las
+  validaciones completadas.</div>
+    </div>
+
+    <div class="s2-cards-grid">
+      <a class="s2-card" href="#slide2">
+        <div class="s2-card-num">01</div>
+        <div class="s2-card-title">Por qué hacer un BC ahora?</div>
+        <div class="s2-card-desc">El momento estratégico de la competencia y Meli</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+      <a class="s2-card" href="#slide3">
+        <div class="s2-card-num">02</div>
+        <div class="s2-card-title">Objetivo BC e Timeline</div>
+        <div class="s2-card-desc">Abril a Agosto</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+      <a class="s2-card" href="#slide4">
+        <div class="s2-card-num">03</div>
+        <div class="s2-card-title">Owners y Responsabilidades</div>
+        <div class="s2-card-desc">Qué se espera de cada equipo</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+      <a class="s2-card" href="#slide5">
+        <div class="s2-card-num">04</div>
+        <div class="s2-card-title">Etapas Macro</div>
+        <div class="s2-card-desc">4 etapas de construcción del BC</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+      <a class="s2-card" href="#slide6">
+        <div class="s2-card-num">05</div>
+        <div class="s2-card-title">Inputs Iniciales</div>
+        <div class="s2-card-desc">Qué definiciones necesitamos para empezar</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+      <a class="s2-card" href="#slide7">
+        <div class="s2-card-num">06</div>
+        <div class="s2-card-title">Próximos Pasos</div>
+        <div class="s2-card-desc">Cronograma, granularidad y gobernanza</div>
+        <div class="s2-card-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 3 — OBJETIVO + TIMELINE
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 03</p>
+<div class="slide slide-light" id="slide3">
+  <div class="br-flag"></div>
+  <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="s3n-title">Business Case H&amp;B MLB</div>
+
+  <div class="s3n-inner">
+
+    <div class="s3n-obj-box">
+      <div class="s3n-obj-label">Objetivo</div>
+      <div class="s3n-obj-text"><strong>Establecer vías de crecimiento sostenible</strong> a partir de la definición del plan de ambición comercial y de la experiencia que queremos ofrecer, teniendo en cuenta las oportunidades de mercado, la complejidad operativa y la rentabilidad.</div>
+    </div>
+
+    <div class="s3n-answers">
+      <div class="s3n-answers-label">Lo que queremos responder</div>
+      <div class="s3n-answers-row">
+        <div class="s3n-answer">
+          <div class="s3n-ans-num">1</div>
+          <div class="s3n-ans-text">¿Cuál es el potencial real de H&amp;B 2027–2029?</div>
+        </div>
+        <div class="s3n-answer">
+          <div class="s3n-ans-num">2</div>
+          <div class="s3n-ans-text">¿Qué experiencia queremos entregar al comprador?</div>
+        </div>
+        <div class="s3n-answer">
+          <div class="s3n-ans-num">3</div>
+          <div class="s3n-ans-text">¿Cómo lo hacemos con rentabilidad y escala?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s3n-tl-block">
+    <div class="s3n-tl-header">Timeline <span>· Entrega final: Agosto 2026 → insumos para el OP 2027</span></div>
+
+    <div class="s3n-tl-row">
+
+      <div class="s3n-tl-dot-col">
+        <div class="s3n-dot s3n-dot-done"></div>
+        <div class="s3n-tl-dot-label s3n-tl-dot-label-done">Mar</div>
+      </div>
+
+      <div class="s3n-tl-seg s3n-seg-done">
+        <div class="s3n-tl-seg-line"></div>
+        <div class="s3n-tl-seg-name">Fase 1<br>Alineamiento</div>
+      </div>
+
+      <div class="s3n-tl-dot-col">
+        <div class="s3n-kickoff-above">Kick Off ▼</div>
+        <div class="s3n-dot s3n-dot-active"></div>
+        <div class="s3n-tl-dot-label s3n-tl-dot-label-active">Abr</div>
+      </div>
+
+      <div class="s3n-tl-seg s3n-seg-active">
+        <div class="s3n-tl-seg-line"></div>
+        <div class="s3n-tl-seg-name">Fase 2<br>Inputs Iniciales</div>
+      </div>
+
+      <div class="s3n-tl-dot-col">
+        <div class="s3n-dot"></div>
+        <div class="s3n-tl-dot-label">May</div>
+      </div>
+
+      <div class="s3n-tl-seg s3n-seg-pending s3n-tl-seg-wide">
+        <div class="s3n-tl-seg-line"></div>
+        <div class="s3n-tl-seg-name">Fase 3<br>Desarrollo — Análisis y Escenarios</div>
+      </div>
+
+      <div class="s3n-tl-dot-col">
+        <div class="s3n-dot"></div>
+        <div class="s3n-tl-dot-label">Jul</div>
+      </div>
+
+      <div class="s3n-tl-seg s3n-seg-pending">
+        <div class="s3n-tl-seg-line"></div>
+        <div class="s3n-tl-seg-name">Fase 4<br>Validación BC</div>
+      </div>
+
+      <div class="s3n-tl-dot-col">
+        <div class="s3n-op-above">OP ▼</div>
+        <div class="s3n-dot"></div>
+        <div class="s3n-tl-dot-label">Ago</div>
+      </div>
+
+    </div>
+
+    </div><!-- end s3n-tl-block -->
+
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 4 — OWNERS
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 04</p>
+<div class="slide slide-light" id="slide4">
+  <div class="br-flag"></div>
+  <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-header"><h2>Owners y Responsabilidades</h2></div>
+
+  <div class="s4-inner">
+
+    <div class="s4-section-label">Owners — Áreas Responsables</div>
+    <div class="s4-row s4-row-2">
+      <div class="s4-card">
+        <div class="s4-card-area">Shipping</div>
+        <div class="s4-card-role">Estrategia logística y picking type.<br>Capacidades operacionales y eficiencia de entrega.</div>
+      </div>
+      <div class="s4-card">
+        <div class="s4-card-area">Comercial</div>
+        <div class="s4-card-role">Ambición de NMV y Market Share por categoría.<br>Estrategia de sellers, dominios D1 y hunting.</div>
+      </div>
+    </div>
+
+    <div class="s4-divider"></div>
+
+    <div class="s4-section-label">Soporte</div>
+    <div class="s4-row s4-row-2s">
+      <div class="s4-card s4-card-support">
+        <div class="s4-card-area">Finanzas</div>
+        <div class="s4-card-role">Simulación de P&amp;L y apetito financiero por escenario.</div>
+      </div>
+      <div class="s4-card s4-card-support">
+        <div class="s4-card-area">Staff Capabilities</div>
+        <div class="s4-card-role">Planning y Pricing — capacidades e inversiones necesarias.</div>
+      </div>
+    </div>
+
+    <div class="s4-question">
+      ¿Estamos con las personas correctas en la sala para construir este Business Case?
+    </div>
+
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 5 — ETAPAS MACRO
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 05</p>
+<div class="slide slide-light" id="slide5">
+  <div class="br-flag"></div>
+  <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-header"><h2>Etapas Macro — Así vamos a construir el BC</h2></div>
+
+  <div class="s5-inner">
+    <div class="s5-cards">
+
+      <div class="s5-card s5-card-1">
+        <div class="s5-card-num">1</div>
+        <div class="s5-card-title">Ambición y Objetivos</div>
+        <ul class="s5-card-bullets">
+          <li>Definir ambición de crecimiento (Meli y Mercado) y escenarios <span class="s5-area-tag">Comercial</span></li>
+          <li>Definir el diferencial competitivo de Meli en H&amp;B <span class="s5-area-tag">Shipping</span></li>
+          <li>Definir el apetito financiero: ¿rentabilidad, break-even o inversión? <span class="s5-area-tag">Finanzas</span></li>
+        </ul>
+      </div>
+
+      <div class="s5-card s5-card-2">
+        <div class="s5-card-num">2</div>
+        <div class="s5-card-title">Análisis y Simulaciones</div>
+        <ul class="s5-card-bullets">
+          <li>Simulación de P&amp;L por escenarios de crecimiento <span class="s5-area-tag">Finanzas</span></li>
+          <li>Estrategia por picking type (XD, FBM, ME1) <span class="s5-area-tag">Shipping + Comercial</span></li>
+          <li>Estrategia por categorías y tipo de seller <span class="s5-area-tag">Comercial</span></li>
+          <li>Restricciones operacionales y análisis de competidores <span class="s5-area-tag">Shipping</span></li>
+        </ul>
+      </div>
+
+      <div class="s5-card s5-card-3">
+        <div class="s5-card-num">3</div>
+        <div class="s5-card-title">Recursos Necesarios</div>
+        <ul class="s5-card-bullets">
+          <li>Definir capabilities necesarias para el plan <span class="s5-area-tag">Producto · Shipping</span></li>
+          <li>Definir inversiones y CAPEX necesario <span class="s5-area-tag">Finanzas</span></li>
+          <li>Enablers de producto y timing de desarrollo <span class="s5-area-tag">Producto</span></li>
+        </ul>
+      </div>
+
+      <div class="s5-card s5-card-4">
+        <div class="s5-card-num">4</div>
+        <div class="s5-card-title">Conclusión</div>
+        <ul class="s5-card-bullets">
+          <li>Escenarios integrados: ambición, viabilidad y rentabilidad <span class="s5-area-tag">Todos</span></li>
+          <li>Mejores avenidas de crecimiento por momento H&amp;B <span class="s5-area-tag">Strategy</span></li>
+          <li>Recomendación final para aprobación <span class="s5-area-tag">Todos</span></li>
+          <li>Respuestas listas para el OP 2027 <span class="s5-area-tag">Todos</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 6 — INPUTS INICIALES
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 06</p>
+<div class="slide slide-light" id="slide6">
+  <div class="br-flag"></div>
+  <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-header"><h2>Inputs Iniciales — ¿Qué necesitamos definir para empezar?</h2></div>
+
+  <div class="s6-inner">
+
+    <div class="s6-left">
+      <div class="s6-ctx-label">Bloque 1 · Etapas Macro</div>
+      <div class="s6-block">
+        <div class="s6-block-num">1</div>
+        <div class="s6-block-title">Ambición y Objetivos</div>
+        <ul class="s6-block-bullets">
+          <li>Definir ambición de crecimiento y escenarios</li>
+          <li>Definir el diferencial competitivo de Meli en H&amp;B</li>
+          <li>Definir el apetito financiero del BC</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="s6-right">
+      <div class="s6-section-title">Sin estas definiciones, el BC no tiene norte estratégico</div>
+      <div class="s6-questions">
+        <div class="s6-q">
+          <div class="s6-q-num">1</div>
+          <div class="s6-q-text">¿Cuál es la ambición de NMV y Market Share para los próximos 3 años?</div>
+        </div>
+        <div class="s6-q">
+          <div class="s6-q-num">2</div>
+          <div class="s6-q-text">¿Cómo queremos ser reconocidos en el mercado y cuál es nuestro diferencial competitivo en H&amp;B?</div>
+        </div>
+        <div class="s6-q">
+          <div class="s6-q-num">3</div>
+          <div class="s6-q-text">¿Cuál es el apetito financiero: crecimiento con inversión o rentabilidad sustentable desde el inicio?</div>
+        </div>
+        <div class="s6-q">
+          <div class="s6-q-num">4</div>
+          <div class="s6-q-text">¿Qué capabilities son críticas para alcanzar la ambición y cuándo las necesitamos?</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 7 — PRÓXIMOS PASOS
+══════════════════════════════════════ -->
+<p class="slide-label">Slide 07</p>
+<div class="slide slide-light" id="slide7">
+  <div class="br-flag"></div>
+  <a href="#slide2" class="back-btn">← Agenda</a>
+  <div class="slide-header"><h2>Próximos Pasos</h2></div>
+
+  <div class="s7-inner">
+    <div class="s7-steps">
+
+      <div class="s7-step s7-step-1">
+        <div class="s7-step-num">01</div>
+        <div class="s7-step-body">
+          <div class="s7-step-title">Construir el cronograma detallado con los owners</div>
+          <div class="s7-step-desc">Establecer fechas, responsables y sesiones de trabajo por bloque del BC. <strong>Deadline para confirmar disponibilidad: 04/abr.</strong> Coordinación a cargo de H&amp;B PMO.</div>
+        </div>
+      </div>
+
+      <div class="s7-step s7-step-2">
+        <div class="s7-step-num">02</div>
+        <div class="s7-step-body">
+          <div class="s7-step-title">Definir la granularidad de información esperada</div>
+          <div class="s7-step-desc">Alinear el nivel de detalle de cada entregable: <strong>por vertical y dominio D1</strong> — para que todos los owners trabajen con la misma precisión desde el inicio.</div>
+        </div>
+      </div>
+
+      <div class="s7-step s7-step-3">
+        <div class="s7-step-num">03</div>
+        <div class="s7-step-body">
+          <div class="s7-step-title">Gobernanza para tracking de la iniciativa</div>
+          <div class="s7-step-desc"><strong>Mesas de trabajo con owners</strong> para seguimiento semanal + <strong>Monthly Iniciativas Estratégicas</strong> para visibilidad de liderazgo: dónde estamos, riesgos y pedidos de ayuda.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="s7-deadline">
+      <strong>Acción inmediata:</strong> compartir disponibilidad con todos los owners hasta el <strong>04/abr</strong>.
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Business Case · H&amp;B MLB · 01/04/2026</span>
+    <span>Confidencial</span>
+  </div>
+</div>
+
+</body>
+</html>
