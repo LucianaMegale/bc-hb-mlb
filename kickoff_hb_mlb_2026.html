@@ -140,24 +140,24 @@
     /* ── SLIDE 4 MATRIX — EQUIPOS ── */
     .s4m-subtitle { font-size: 13px; font-weight: 500; color: #555; padding: 2px 20px 0; flex-shrink: 0; }
     .s4m-inner { flex: 1; display: flex; flex-direction: column; padding: 0 14px 12px; min-height: 0; justify-content: center; }
-    .s4m-table { display: grid; grid-template-columns: 66px repeat(8, 1fr); grid-template-rows: 18px 32px auto auto auto auto; gap: 3px; }
+    .s4m-table { display: grid; grid-template-columns: 72px repeat(8, 1fr); grid-template-rows: 20px 38px auto auto auto auto; gap: 4px; }
     /* Super-header */
-    .s4m-sh { display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 3px; }
+    .s4m-sh { display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 3px; }
     .s4m-sh-empty { background: transparent; }
     .s4m-sh-resp { background: #0F1117; color: #fff; grid-column: span 2; }
     .s4m-sh-sup { background: #6B7280; color: #fff; grid-column: span 5; }
     .s4m-sh-pmo { background: #FFD500; color: #0F1117; }
     /* Column headers */
-    .s4m-ch { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 8.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; border-radius: 4px; padding: 2px 4px; line-height: 1.25; }
+    .s4m-ch { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; border-radius: 4px; padding: 3px 5px; line-height: 1.25; }
     .s4m-ch-resp { background: #0F1117; color: #fff; }
     .s4m-ch-sup { background: #6B7280; color: #fff; }
     .s4m-ch-pmo { background: #FFD500; color: #0F1117; }
     /* Row labels */
-    .s4m-rl { background: #E5E7EB; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 8.5px; font-weight: 800; color: #374151; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.02em; padding: 3px; }
-    .s4m-cell { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; gap: 1px; overflow: hidden; }
-    .s4m-name { font-size: 9.5px; font-weight: 700; color: #0F1117; line-height: 1.3; }
+    .s4m-rl { background: #E5E7EB; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 800; color: #374151; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.02em; padding: 4px; }
+    .s4m-cell { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 4px; padding: 5px 7px; display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+    .s4m-name { font-size: 11px; font-weight: 700; color: #0F1117; line-height: 1.3; }
     .s4m-empty { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #D1D5DB; font-size: 12px; }
-    .s4m-rl-owners { background: #0F1117; color: #fff; }
+    .s4m-rl-owners { background: #E5E7EB; color: #374151; }
     .s4m-papeis-rl { background: #E5E7EB; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 8.5px; font-weight: 800; color: #374151; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.02em; padding: 3px; }
     .s4m-papeis { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 4px; padding: 5px 6px; font-size: 9px; color: #374151; line-height: 1.45; overflow: hidden; }
 
@@ -201,13 +201,16 @@
     .s6-block-bullets li { font-size: 12px; color: #444; line-height: 1.4; padding-left: 12px; position: relative; }
     .s6-block-bullets li::before { content: '•'; position: absolute; left: 0; color: #B8860B; font-weight: 900; }
 
-    .s6-section-title { font-size: 14px; font-weight: 800; color: #0F1117; margin-bottom: 4px; flex-shrink: 0; }
+    .s6-section-title { font-size: 12px; font-weight: 600; color: #888; margin-bottom: 4px; flex-shrink: 0; font-style: italic; }
     .s6-questions { display: flex; flex-direction: column; gap: 8px; flex: 1; }
-    .s6-q { border: 1px solid #e5e7eb; border-left: 4px solid #0F1117; background: #FAFAFA; border-radius: 0 6px 6px 0; padding: 14px 16px; display: flex; gap: 16px; align-items: center; flex: 1; }
+    .s6-q { border: 1px solid #e5e7eb; border-left: 4px solid #0F1117; background: #FAFAFA; border-radius: 0 6px 6px 0; padding: 10px 16px; display: flex; gap: 16px; align-items: center; flex: 1; }
     .s6-q-num { font-size: 18px; font-weight: 900; color: #0F1117; line-height: 1; flex-shrink: 0; width: 20px; }
-    .s6-q-text { font-size: 14px; font-weight: 700; color: #0F1117; line-height: 1.45; flex: 1; }
+    .s6-q-body { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .s6-q-text { font-size: 13px; font-weight: 700; color: #0F1117; line-height: 1.4; }
+    .s6-q-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .s6-q-tag { font-size: 9.5px; font-weight: 600; background: rgba(0,0,0,0.06); color: #555; padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
     .s6-q-area { flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
-    .s6-area-tag { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; background: #0F1117; color: #FFD500; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+    .s6-area-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(0,0,0,0.06); color: #888; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
 
     /* ═══════════════════════════════════════
        SLIDE 7 — PRÓXIMOS PASOS
@@ -236,17 +239,20 @@
     .s3n-title { font-size: 22px; font-weight: 800; color: #0F1117; padding: 16px 20px 0; flex-shrink: 0; }
 
     .s3n-why { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
-    .s3n-why-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; }
+    .s3n-why-label { font-size: 14px; font-weight: 800; color: #B8860B; letter-spacing: 0.05em; text-transform: uppercase; }
     .s3n-why-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
-    .s3n-why-card { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 3px solid #FFD500; border-radius: 0 6px 6px 0; padding: 11px 14px; display: flex; gap: 10px; align-items: flex-start; }
+    .s3n-why-card { background: #F9FAFB; border: 1px solid #e5e7eb; border-left: 3px solid #FFD500; border-radius: 0 6px 6px 0; padding: 11px 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+    .s3n-why-top { display: flex; gap: 10px; align-items: flex-start; flex: 1; }
     .s3n-why-num { font-size: 20px; font-weight: 900; color: #0F1117; line-height: 1; flex-shrink: 0; margin-top: 0; }
     .s3n-why-text { font-size: 12.5px; font-weight: 600; color: #0F1117; line-height: 1.45; }
+    .s3n-why-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .s3n-why-tag { font-size: 10px; font-weight: 700; background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
 
     .s3n-obj-box { border-left: 5px solid #FFD500; background: #FFFDE7; padding: 11px 16px; border-radius: 0 6px 6px 0; flex-shrink: 0; margin-top: 32px; }
-    .s3n-obj-label { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+    .s3n-obj-label { font-size: 14px; font-weight: 800; color: #B8860B; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 5px; }
     .s3n-obj-text { font-size: 13.5px; color: #0F1117; line-height: 1.55; }
 
-    .s3n-tl-header { font-size: 11px; font-weight: 800; color: #B8860B; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
+    .s3n-tl-header { font-size: 14px; font-weight: 800; color: #B8860B; letter-spacing: 0.05em; text-transform: uppercase; flex-shrink: 0; }
     .s3n-tl-header span { color: #0F1117; font-weight: 600; font-size: 13px; letter-spacing: 0; text-transform: none; }
 
     /* Month dots row */
@@ -322,7 +328,7 @@
 <!-- ══════════════════════════════════════
      SLIDE 1 — COVER
 ══════════════════════════════════════ -->
-<p class="slide-label">Slide 01 — Portada</p>
+<p class="slide-label">Slide 01 </p>
 <div class="slide" id="slide1">
   <div class="s1-topbar"></div>
   <div class="s1-grid"></div>
@@ -355,9 +361,7 @@
   <div class="s2-inner">
     <div class="s2-obj-box">
       <div class="s2-obj-label">Objetivo de esta reunión</div>
-      <div class="s2-obj-text">Definir las <strong>etapas de construcción</strong> del BC, asegurar que estamos con las <strong>personas correctas</strong> y,
-  sobre todo, definir lo que vamos responder al final del ejercicio para llegar al <strong>OP 2027</strong> con todas las
-  validaciones completadas.</div>
+      <div class="s2-obj-text">Definir las <strong>etapas de construcción</strong> del BC, asegurar que estamos con las <strong>personas correctas</strong> y, sobre todo, definir los <strong>outputs</strong> al final del ejercicio para llegar al <strong>OP 2027</strong> con todas las validaciones completadas.</div>
     </div>
 
     <div class="s2-cards-grid">
@@ -416,27 +420,47 @@
       <div class="s3n-why-label">Por qué hacer un BC ahora?</div>
       <div class="s3n-why-row">
         <div class="s3n-why-card">
-          <div class="s3n-why-num">1</div>
-          <div class="s3n-why-text"><strong>Competencia más acirrada</strong> — Shopee escalando ME1, Amazon acelerando y Magalu mantiene logística fuerte</div>
+          <div class="s3n-why-top">
+            <div class="s3n-why-num">1</div>
+            <div class="s3n-why-text"><strong>Competencia más acirrada</strong></div>
+          </div>
+          <div class="s3n-why-tags">
+            <span class="s3n-why-tag">Shopee acelerando</span>
+            <span class="s3n-why-tag">Amazon escalando</span>
+            <span class="s3n-why-tag">Magalu fuerte logistica</span>
+          </div>
         </div>
         <div class="s3n-why-card">
-          <div class="s3n-why-num">2</div>
-          <div class="s3n-why-text">Momento de <strong>revisión y construcción</strong> de la <strong>propuesta de valor Meli</strong> en H&amp;B — ¿queremos ser reconocidos por una experiencia premium, barata o personalizada?</div>
+          <div class="s3n-why-top">
+            <div class="s3n-why-num">2</div>
+            <div class="s3n-why-text">Momento de <strong>revisión de la propuesta de valor Meli</strong> en H&amp;B</div>
+          </div>
+          <div class="s3n-why-tags">
+            <span class="s3n-why-tag">Estratégia ME1 &amp; ME2</span>
+            <span class="s3n-why-tag">Rede dedicada</span>
+          </div>
         </div>
         <div class="s3n-why-card">
-          <div class="s3n-why-num">3</div>
-          <div class="s3n-why-text"><strong>Estrategia de largo plazo (3YP)</strong> para definición de la estrategia mientras no tenemos la solución final (growth vs rentabilidad vs experiencia)</div>
+          <div class="s3n-why-top">
+            <div class="s3n-why-num">3</div>
+            <div class="s3n-why-text">Falta de claridad </strong>estratégica de largo plazo</strong> (3YP) </div>
+          </div>
+          <div class="s3n-why-tags">
+            <span class="s3n-why-tag">Experiencia</span>
+            <span class="s3n-why-tag">Inversión</span>
+            <span class="s3n-why-tag">Crecimiento</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="s3n-obj-box">
       <div class="s3n-obj-label">Objetivo del BC</div>
-      <div class="s3n-obj-text"><strong>Establecer vías de crecimiento sostenible</strong> a partir de la definición del plan de ambición comercial y de la experiencia que queremos ofrecer, teniendo en cuenta las oportunidades de mercado, la complejidad operativa y la rentabilidad.</div>
+      <div class="s3n-obj-text">Construir <strong>escenarios de crecimiento (agresivo, moderado y conservador)</strong> para definir el <strong>mejor camino de crecimiento por momento H&amp;B</strong>, a partir del plan de ambición comercial, complejidad operacional, tiempo de implementación de capabilities y apetito financiero.</div>
     </div>
 
     <div class="s3n-tl-block">
-    <div class="s3n-tl-header">Timeline <span>· Entrega final: Jul/26 → insumos para el OP 2027</span></div>
+    <div class="s3n-tl-header">Timeline <span>· Entrega final: 31/Jul → insumos para el OP 2027</span></div>
 
     <div class="s3n-tl-row">
 
@@ -673,26 +697,54 @@
     </div>
 
     <div class="s6-right">
-      <div class="s6-section-title">Sin estas definiciones, el BC no tiene norte estratégico</div>
+      <div class="s6-section-title">Norte estratégico para el BC</div>
       <div class="s6-questions">
         <div class="s6-q">
           <div class="s6-q-num">●</div>
-          <div class="s6-q-text">Cuál es la ambición de NMV y Market Share para los próximos 3 años?</div>
+          <div class="s6-q-body">
+            <div class="s6-q-text">Cuál es la ambición de NMV y Market Share para los próximos 3 años?</div>
+            <div class="s6-q-tags">
+              <span class="s6-q-tag">Categoría de producto</span>
+              <span class="s6-q-tag">Tamaño de seller</span>
+              <span class="s6-q-tag">Online y Offline</span>
+            </div>
+          </div>
           <div class="s6-q-area"><span class="s6-area-tag">Comercial</span></div>
         </div>
         <div class="s6-q">
           <div class="s6-q-num">●</div>
-          <div class="s6-q-text">Cómo queremos ser reconocidos en el mercado y cuál es nuestro diferencial competitivo en H&amp;B?</div>
+          <div class="s6-q-body">
+            <div class="s6-q-text">Cómo queremos ser reconocidos en el mercado y cuál es nuestro diferencial competitivo en H&amp;B?</div>
+            <div class="s6-q-tags">
+              <span class="s6-q-tag">Menor precio</span>
+              <span class="s6-q-tag">Premium</span>
+              <span class="s6-q-tag">Personalizada</span>
+            </div>
+          </div>
           <div class="s6-q-area"><span class="s6-area-tag">Shipping</span><span class="s6-area-tag">Comercial</span></div>
         </div>
         <div class="s6-q">
           <div class="s6-q-num">●</div>
-          <div class="s6-q-text">Cuál es el apetito financiero: crecimiento con inversión o rentabilidad sustentable desde el inicio?</div>
+          <div class="s6-q-body">
+            <div class="s6-q-text">Cuál es el apetito financiero: crecimiento con inversión o rentabilidad sustentable desde el inicio?</div>
+            <div class="s6-q-tags">
+              <span class="s6-q-tag">Rentabilidad</span>
+              <span class="s6-q-tag">Inversión</span>
+              <span class="s6-q-tag">Financiar categorías clave</span>
+            </div>
+          </div>
           <div class="s6-q-area"><span class="s6-area-tag">Finanzas</span></div>
         </div>
         <div class="s6-q">
           <div class="s6-q-num">●</div>
-          <div class="s6-q-text">Qué capabilities son críticas para alcanzar la ambición y cuándo las necesitamos?</div>
+          <div class="s6-q-body">
+            <div class="s6-q-text">Qué capabilities son críticas para alcanzar la ambición y cuándo las necesitamos?</div>
+            <div class="s6-q-tags">
+              <span class="s6-q-tag">Servicio de instalación</span>
+              <span class="s6-q-tag">Devoluciones</span>
+              <span class="s6-q-tag">Red dedicada</span>
+            </div>
+          </div>
           <div class="s6-q-area"><span class="s6-area-tag">Shipping</span></div>
         </div>
       </div>
